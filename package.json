@@ -1,0 +1,60 @@
+{
+  "name": "cursor-toolbox",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Cross-platform CLI utilities for Cursor IDE maintenance",
+  "bin": {
+    "cursor-toolbox": "./dist/cli.cjs"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/",
+    "prepublishOnly": "yarn build",
+    "release": "tsx scripts/release.ts",
+    "reset-dont-ask": "yarn build && node dist/cli.cjs reset-dont-ask",
+    "move-agent-chats": "yarn build && node dist/cli.cjs move-agent-chats"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/better-sqlite3": "^7",
+    "@types/node": "^22",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.3",
+    "tsup": "^8",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "typescript-eslint": "^8.58.2"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cursor",
+    "cursor-ide",
+    "cli",
+    "utilities"
+  ],
+  "author": "numanaral",
+  "license": "MIT",
+  "homepage": "https://github.com/numanaral/cursor-toolbox#readme",
+  "bugs": {
+    "url": "https://github.com/numanaral/cursor-toolbox/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/numanaral/cursor-toolbox.git"
+  }
+}
